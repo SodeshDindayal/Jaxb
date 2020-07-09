@@ -4,7 +4,9 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws IOException, JAXBException {
@@ -29,10 +31,35 @@ public class Main {
 
         System.out.println("'\n\n------------- Options ---------------");
         System.out.println("\n1. Search Items by Group");
-        String choice = scan.nextLine();
+        System.out.println("\n2. Modify Movie");
+        int choice = scan.nextInt();
+        scan.nextLine();
 
-        if(choice == gr)
+        if(choice == 1){
+            System.out.println("\nEnter the group name you're searching for: ");
+            String search = scan.nextLine();
 
+            List<Item> filteredByGroup = items.stream()
+                    .filter(i ->i.getGroup().equals(search))
+                    .collect(Collectors.toList());
 
+            filteredByGroup.forEach(System.out::println);
+
+        }
+        else if (choice == 2){
+            System.out.println("\nEnter the name of the movie you would like to modify: ");
+            String search = scan.nextLine();
+
+            Optional<Item> item = items.stream()
+                    .filter(x -> x.getName().equals(search))
+                    .findFirst();
+
+            System.out.println(item.toString());
+
+        }
+
+        else{
+            System.out.println("You entered an invalid option!");
+        }
     }
 }
