@@ -1,4 +1,4 @@
-<items> 
+ <items> 
       <item>
             <dataType>Number</dataType>
             <name>Rush Hour</name>
@@ -13,13 +13,13 @@
             <items>
                   <item>
                         <dataType>Number</dataType>
-                        <name>Harry Potter 2</name>
+                        <name>Harry Potter and the Goblet Of Fire</name>
                         <data>3</data>
                         <group>Fiction</group>
                   </item>
                   <item>
                         <dataType>Number</dataType>
-                        <name>Harry Potter 3</name>
+                        <name>Harry Potter and the Chamber of secrets</name>
                         <data>4</data>
                         <group>Fiction</group>
                   </item>
